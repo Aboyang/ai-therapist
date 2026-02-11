@@ -197,39 +197,35 @@ function ConvoAI() {
       };
   }, [dataChannel])
 
-  // async function generateSummary() {
-  //   try {
-  //     const response = await fetch("http://localhost:8000/", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         age: userInfo.age,
-  //         gender: userInfo.gender,
-  //         concerns: userInfo.concerns,
-  //         conversation_context: transcript.current
-  //       }),
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error("Failed to generate summary");
-  //     }
-
-  //     const data = await response.json();
-
-  //     console.log("Summary URL:", data.summary_url);
-
-  //     // Optional: open in new tab
-  //     window.open(data.summary_url, "_blank");
-
-  //   } catch (error) {
-  //     console.error("Error generating summary:", error);
-  //   }
-  // }
-
   async function generateSummary() {
-    window.open("https://bardoqybowxfbdnhhega.supabase.co/storage/v1/object/public/patient-summaries/summary_20260211_222937_4f31472db8ce4556afe536c0a29dc0de.html")
+    try {
+      const response = await fetch("http://localhost:8000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          age: userInfo.age,
+          gender: userInfo.gender,
+          concerns: userInfo.concerns,
+          conversation_context: transcript.current
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate summary");
+      }
+
+      const data = await response.json();
+
+      console.log("Summary URL:", data.summary_url);
+
+      // Optional: open in new tab
+      window.open(data.summary_url, "_blank");
+
+    } catch (error) {
+      console.error("Error generating summary:", error);
+    }
   }
 
   return (
@@ -246,12 +242,8 @@ function ConvoAI() {
           {isSessionActive ? "Stop Session" : "Launch Session"}
         </button>
       }
-
-      {transcript.current.length > 0 &&
-      <BookingButtons />
-      }
       
-      {/* {transcript.current.length > 0 && (
+      {transcript.current.length > 0 && (
         <div className="booking-btns">
         <button
           className="btn-primary btn-large"
@@ -266,7 +258,7 @@ function ConvoAI() {
           Book Appointment
         </button>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

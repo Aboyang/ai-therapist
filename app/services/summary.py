@@ -56,7 +56,7 @@ def generate_summary_html(age: int, gender: str, concerns: List[str], conversati
     """
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4.1",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.1
     )
@@ -100,24 +100,3 @@ def create_patient_summary(age: int, gender: str, concerns: List[str], conversat
     link = upload_to_supabase(html_summary)
 
     return link, html_summary
-
-html_summary = """
-- Age: 21
-- Gender: Female
-- Main Concern: Relationship, Depression
-
-Any Relevant Conversation Stages (Story Lines)
-- Stage 1: Patient expresses grief over the loss of a long term relationship.
-- Stage 2: Patient shares the impact of the stress that it creates on her especially having to juggle her academics at the same time.
-- Stage 3: Patient finds that she has attached her self-worth and identity to the relationship, losing which, has caused her to feel as if a part of her is taken.
-
-- Action Points
- - Seek emotional support, such as talking to a close friend, family member, or counselor.
- - Separate self-worth from relationship outcomes, focusing on personal strengths and achievements.
- - Practice stress management strategies: journaling, mindfulness, or short study breaks.
- - Attend study groups or consult a tutor to reduce academic anxiety.
- - Does the patient feel better towards the end?
-
-Yes — the patient is open to taking steps to improve their situation.
-"""
-link = upload_to_supabase(html_summary)

@@ -1,0 +1,141 @@
+/* Root container spacing */
+.agent-style-step {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.agent-style-header {
+  text-align: center;
+}
+
+.agent-style-header h2 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 300;  /* font-light */
+  color: #1f2937;    /* stone-800 */
+}
+
+.agent-style-header p {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280;      /* stone-500 */
+}
+
+/* Section title */
+.section-title {
+  font-weight: 500; /* font-medium */
+  color: #374151;   /* gray-700 */
+}
+
+/* Grid for options */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+/* Option Button */
+.option-button {
+  position: relative;
+  padding: 1rem; /* p-6 */
+  border: 2px solid #e5e7eb; /* border-stone-200 */
+  border-radius: 1rem; /* rounded-2xl */
+  text-align: left;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.option-button:hover {
+  border-color: #94a3b8; /* hover border for neutral */
+}
+
+/* Selected state */
+.option-button.sage-selected {
+  border-color: #4b6654; /* sage-600 */
+  background-color: #f0f5f0; /* sage-50 */
+}
+
+.option-button.lavender-selected {
+  border-color: #7f6bbf; /* lavender-600 */
+  background-color: #f4f1fa; /* lavender-50 */
+}
+
+/* Icon wrapper */
+.option-icon-wrapper {
+  width: 2.5rem; /* w-14 */
+  height: 2.5rem;
+  border-radius: 9999px; /* full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  background-color: #f3f4f6; /* gray-100 default */
+}
+
+.option-button.sage-selected .option-icon-wrapper {
+  background-color: #d9ead3; /* sage-200 */
+}
+
+.option-button.lavender-selected .option-icon-wrapper {
+  background-color: #e6e0f6; /* lavender-200 */
+}
+
+/* Icon color */
+.option-icon {
+  width: 1.25rem; /* w-7 */
+  height: 1.25rem;
+  color: #6b7280; /* stone-500 default */
+}
+
+.option-button.sage-selected .option-icon {
+  color: #314034; /* sage-700 */
+}
+
+.option-button.lavender-selected .option-icon {
+  color: #4f3f91; /* lavender-700 */
+}
+
+/* Label */
+.option-label {
+  font-size: 0.875rem;    /* smaller font */
+  font-weight: 500;
+  margin-bottom: 0;       /* reduce margin */
+}
+
+.option-button.sage-selected .option-label {
+  color: #314034; /* sage-800 */
+}
+
+.option-button.lavender-selected .option-label {
+  color: #4f3f91; /* lavender-800 */
+}
+
+/* Description */
+.option-desc {
+  font-size: 0.75rem; /* text-sm */
+  color: #6b7280; /* stone-500 */
+}
+
+/* Selected indicator circle */
+.option-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem; /* w-6 */
+  height: 1.5rem;
+  border-radius: 9999px; /* full */
+  background-color: currentColor; /* bg-sage-600 / lavender-600 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-indicator-inner {
+  width: 0.5rem; /* w-2 */
+  height: 0.5rem;
+  border-radius: 9999px; /* full */
+  background-color: #ffffff;
+}

@@ -1,0 +1,89 @@
+.booking-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #ddeedd,
+    #cfe6d4
+  );
+}
+
+/* Glass Card */
+.glass-card {
+  width: 420px;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  color: #1f2937;
+}
+
+.glass-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2f6f4e;
+  font-weight: 600;
+}
+
+/* Form */
+.glass-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Inputs */
+.glass-card input {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.8);
+  color: #1f2937;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.glass-card input:focus {
+  border: 1px solid #3a8d5d;
+  box-shadow: 0 0 0 3px rgba(58, 141, 93, 0.15);
+}
+
+/* Button */
+.glass-card button {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+
+  background: #3a8d5d;
+  color: white;
+  transition: 0.25s ease;
+}
+
+.glass-card button:hover {
+  background: #2f6f4e;
+  transform: translateY(-2px);
+}
+
+/* Success / Error message */
+.message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}

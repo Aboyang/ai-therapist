@@ -1,0 +1,10 @@
+.summary-panel {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: green;
+  white-space: pre-wrap;
+}

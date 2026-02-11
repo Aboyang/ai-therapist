@@ -1,0 +1,205 @@
+/* Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #f5f5f4,
+    #edf2ea,
+    #f3f0fa
+  );
+  overflow: hidden;
+}
+
+/* Background blobs */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.blob-sage {
+  width: 280px;
+  height: 280px;
+  top: 5rem;
+  left: 4rem;
+  background: rgba(138, 152, 113, 0.3);
+}
+
+.blob-lavender {
+  width: 380px;
+  height: 380px;
+  bottom: 5rem;
+  right: 4rem;
+  background: rgba(189, 176, 230, 0.3);
+}
+
+.blob-rose {
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 228, 230, 0.3);
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(138, 152, 113, 0.3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b6654;
+}
+
+.badge-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Title */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: #292524;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-gradient-text {
+  display: block;
+  font-weight: 400;
+  background: linear-gradient(
+    to right,
+    #4b6654,
+    #8473b9,
+    #4b6654
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Description */
+.hero-description {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #57534e;
+  max-width: 50rem;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  background: #4b6654;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(75, 102, 84, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #3b5242;
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(75, 102, 84, 0.35);
+}
+
+.btn-ghost {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  color: #57534e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #292524;
+}
+
+/* Trust indicators */
+.trust-grid {
+  margin-top: 5rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.trust-card {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.25s ease;
+}
+
+.trust-card:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.trust-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #edf2ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: #4b6654;
+}
+
+.trust-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #292524;
+  margin-bottom: 0.5rem;
+}
+
+.trust-card p {
+  font-size: 0.875rem;
+  color: #57534e;
+}

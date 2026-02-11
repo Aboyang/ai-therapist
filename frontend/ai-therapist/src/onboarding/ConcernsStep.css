@@ -1,0 +1,118 @@
+/* ConcernsStep.css */
+
+/* Container spacing */
+.concerns-step {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* equivalent to space-y-8 */
+}
+
+/* Header */
+.concerns-header {
+  text-align: center;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.concerns-header h2 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 300;  /* font-light */
+  color: #1f2937;    /* gray-800 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.concerns-header p {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280;      /* gray-500 */
+}
+
+/* Grid of concern buttons */
+.concerns-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem; /* gap-3 */
+}
+
+/* Individual concern button */
+.concern-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+  padding: 1rem; /* p-4 */
+  border: 2px solid #e5e7eb; /* border-gray-200 */
+  border-radius: 0.75rem; /* rounded-xl */
+  text-align: left;
+  background-color: #ffffff;
+  color: #374151; /* gray-700 */
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.concern-button:hover {
+  border-color: #94a3b8; /* sage-300 hover border */
+}
+
+/* Selected concern */
+.concern-button.selected {
+  border-color: #4b6654; /* sage-600 */
+  background-color: #f0f5f0; /* sage-50 */
+  color: #314034; /* sage-800 */
+}
+
+/* Icon wrapper */
+.concern-icon-wrapper {
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem;
+  border-radius: 0.5rem; /* rounded-lg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* gray-100 default */
+}
+
+.concern-button.selected .concern-icon-wrapper {
+  background-color: #d9ead3; /* sage-200 */
+}
+
+/* Icon color */
+.concern-icon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem;
+  color: #6b7280; /* gray-500 default */
+}
+
+.concern-button.selected .concern-icon {
+  color: #314034; /* sage-700 */
+}
+
+/* Label text */
+.concern-label {
+  font-weight: 500; /* font-medium */
+}
+
+/* Optional context textarea */
+.context-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+  padding-top: 1rem; /* pt-4 */
+}
+
+.context-label {
+  font-weight: 500; /* font-medium */
+  color: #374151; /* gray-700 */
+}
+
+.context-textarea {
+  min-height: 120px;
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  border-radius: 0.75rem; /* rounded-xl */
+  resize: vertical;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.context-textarea:focus {
+  border-color: #4b6654; /* sage-500 */
+  box-shadow: 0 0 0 4px rgba(75, 102, 84, 0.2); /* focus:ring-sage-500/20 */
+}

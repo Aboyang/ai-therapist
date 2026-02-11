@@ -1,0 +1,176 @@
+/* ================================
+   Root onboarding container
+================================ */
+.onboarding-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 700px;
+  padding: 1.5rem;
+  margin-top: 4em;
+}
+
+
+/* ================================
+   Card container (FIXED SIZE)
+================================ */
+.onboarding-card {
+  position: relative;
+  width: 100%;
+  height: 100%;                
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  padding: 2rem;
+  overflow: hidden;            
+}
+
+
+/* ================================
+   Step indicator
+================================ */
+.step-indicator {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+
+
+/* ================================
+   MAIN CONTENT (SCROLLABLE)
+   All dynamic step content
+   MUST live here
+================================ */
+.onboarding-content {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 5.5rem; /* space for fixed buttons */
+}
+
+
+
+/* Optional: smooth scrollbar */
+.onboarding-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.onboarding-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+
+
+/* ================================
+   Navigation buttons (LOCKED)
+================================ */
+.navigation-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #f5f5f4;
+
+  background: rgba(255, 255, 255, 0.9); /* avoids content bleed */
+  backdrop-filter: blur(12px);
+}
+
+
+
+/* ================================
+   Back button
+================================ */
+.button-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-back:hover {
+  background-color: #f3f4f6;
+}
+
+
+/* ================================
+   Next / Start button
+================================ */
+.button-next {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 9999px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+/* Disabled state */
+.button-next.disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+
+/* Default next button */
+.button-next.default {
+  background-color: #4b6654;
+}
+
+.button-next.default:hover {
+  background-color: #3b5242;
+}
+
+
+/* Last step button */
+.button-next.last {
+  background: linear-gradient(to right, #4b6654, #8473b9);
+}
+
+.button-next.last:hover {
+  background: linear-gradient(to right, #3b5242, #7260a8);
+}
+
+
+/* ================================
+   Loader
+================================ */
+.loader {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ================================
+   Button icons
+================================ */
+.button-icon {
+  width: 1rem;
+  height: 1rem;
+}

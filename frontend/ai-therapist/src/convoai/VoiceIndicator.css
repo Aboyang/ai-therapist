@@ -1,0 +1,49 @@
+.circle {
+    border-radius: 1000px;
+}
+
+.large {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: breathe 1s ease-in-out 0s infinite alternate both;
+}
+
+.medium {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: breathe 1s ease-in-out 0.5s infinite alternate both;
+}
+
+.small {
+    width: 100px;
+    height: 100px;
+    animation: breathe 1s ease-in-out 1s infinite alternate both;
+}
+
+.large {
+    background-color: rgba(79, 191, 143, 0.15);
+}
+
+.medium {
+    background-color: rgba(79, 191, 143, 0.3);
+}
+
+.small {
+    background-color: rgba(79, 191, 143, 0.6);
+}
+
+
+@keyframes breathe {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.75);
+    }
+}

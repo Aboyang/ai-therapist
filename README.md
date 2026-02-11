@@ -75,42 +75,20 @@ The project is split into **backend** and **frontend**:
 * **Backend:** `app`
 * **Frontend:** `frontend/ai-therapist`
 
-### Prerequisites
+### Note on Database & Vector Store Access
+This app uses **Supabase** and **Qdrant** for storage and vector search. Only our team’s access keys can connect to these services, so some features (e.g., booking appointments, RAG chatbot, knowledge base management) cannot be fully tested by external users.
 
-* Node.js >= 18
-* Python >= 3.10
-* Git
+The app will run locally, but certain functionality will be limited without the proper credentials.
 
 ### Installation
 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-org/serene.git
-cd serene
+git clone https://github.com/Aboyang/ai-therapist.git
 ```
-
-2. **Set up Backend**
-
-```bash
-cd app
-python -m venv venv
-# macOS/Linux
-source venv/bin/activate
-# Windows
-venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-3. **Set up Frontend**
-
-```bash
-cd frontend/ai-therapist
-npm install
-```
-
-4. **Environment Variables**
-   Create a `.env` file in both backend and frontend directories with the following keys:
+2. **Environment Variables**
+   Create a `.env` file in the root directory with:
 
 ```env
 QDRANT_API_KEY=YOUR_QDRANT_API_KEY
@@ -121,19 +99,35 @@ SUPABASE_URL=YOUR_SUPABASE_URL
 SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
 SUPABASE_BUCKET=patients-summary
 ```
+   Create a `.env` file in the frontend/ai-therapist directory with:
 
-5. **Run the Project**
+```env
+VITE_SUPABASE_URL=YOUR_VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY=YOUR_VITE_SUPABASE_ANON_KEY
+```
+---
+
+3. **Set up and Run Backend Server**
 
 ```bash
-# Backend
+python -m venv venv
+# macOS/Linux
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+pip install -r requirements.txt
 uvicorn app.main:app --reload
-
-# Frontend
-cd frontend/ai-therapist
-npm run dev
 ```
 
----
+4. **Set up and RUn Frontend**
+
+```bash
+cd frontend/ai-therapist
+npm install
+npm run dev
+```
+- for theraphist's dashboard, navigate to '/dashboard'
+
 
 ## Impact & Roadmap
 

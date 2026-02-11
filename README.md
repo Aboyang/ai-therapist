@@ -1,4 +1,4 @@
-# Serene 🌿
+# Serene
 
 **The AI-Mediated Bridge to Mental Health Care**
 
@@ -41,7 +41,7 @@ Serene is the **Missing Middle Ground** — a low-stakes buffer designed for **T
 
 ---
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 
 ### Tech Stack
 

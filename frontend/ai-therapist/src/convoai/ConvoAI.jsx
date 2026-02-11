@@ -52,64 +52,64 @@ function ConvoAI() {
     // Setup data channel
     const dc = pc.createDataChannel("oai-events");
     setDataChannel(dc);
-    //   console.log("Data channel open — configuring session");
-    //   setIsDataChannelReady(true);
+      console.log("Data channel open — configuring session");
+      setIsDataChannelReady(true);
 
-    //   // Flush queued events
-    //   pendingEvents.current.forEach(event => dc.send(JSON.stringify(event)));
-    //   pendingEvents.current = [];
+      // Flush queued events
+      pendingEvents.current.forEach(event => dc.send(JSON.stringify(event)));
+      pendingEvents.current = [];
 
-    //   // Configure session
-    //   dc.send(
-    //     JSON.stringify({
-    //       type: "session.update",
-    //       session: {
-    //         turn_detection: {
-    //           type: "always_listen",
-    //           threshold: 0.5,
-    //           min_speech_duration_ms: 50,
-    //           max_silence_duration_ms: 200,
-    //         },
-    //         interrupt_response: true,
-    //         input_audio_noise_reduction: { type: "near_field" },
-    //       },
-    //     })
-    //   );
+      // Configure session
+      dc.send(
+        JSON.stringify({
+          type: "session.update",
+          session: {
+            turn_detection: {
+              type: "always_listen",
+              threshold: 0.5,
+              min_speech_duration_ms: 50,
+              max_silence_duration_ms: 200,
+            },
+            interrupt_response: true,
+            input_audio_noise_reduction: { type: "near_field" },
+          },
+        })
+      );
 
-    //   // System message: therapy instructions
-    //   const systemMessage = {
-    //     type: "conversation.item.create",
-    //     item: {
-    //       type: "message",
-    //       role: "system",
-    //       content: [
-    //         {
-    //           type: "input_text",
-    //           text: `
-    //             You are a supportive, reflective conversational therapy assistant.
+      // System message: therapy instructions
+      const systemMessage = {
+        type: "conversation.item.create",
+        item: {
+          type: "message",
+          role: "system",
+          content: [
+            {
+              type: "input_text",
+              text: `
+                You are a supportive, reflective conversational therapy assistant.
                 
-    //             GOAL:
-    //             - Help the user explore thoughts and emotions safely.
-    //             - Do not diagnose or provide medical advice.
-    //             - Listen, validate, and ask one thoughtful, open-ended question at a time.
-    //             - Prioritize emotional safety.
+                GOAL:
+                - Help the user explore thoughts and emotions safely.
+                - Do not diagnose or provide medical advice.
+                - Listen, validate, and ask one thoughtful, open-ended question at a time.
+                - Prioritize emotional safety.
 
-    //             USER CONTEXT:
-    //             - Age: ${userInfo.age}
-    //             - Gender: ${userInfo.gender}
-    //             - Main Concern: ${userInfo.concerns?.join(", ")}
+                USER CONTEXT:
+                - Age: ${userInfo.age}
+                - Gender: ${userInfo.gender}
+                - Main Concern: ${userInfo.concerns?.join(", ")}
 
-    //             AGENT PREFERENCES:
-    //             - Speaking Style: ${agentPreferences.style}
-    //           `,
-    //         },
-    //       ],
-    //     },
-    //   };
+                AGENT PREFERENCES:
+                - Speaking Style: ${agentPreferences.style}
+              `,
+            },
+          ],
+        },
+      };
 
-    //   sendClientEvent(systemMessage, true);
-    //   sendClientEvent({ type: "response.create" }, true);
-    // };
+      sendClientEvent(systemMessage, true);
+      sendClientEvent({ type: "response.create" }, true);
+    };
 
     dc.onopen = () => {
       console.log("Data channel open — configuring session");
